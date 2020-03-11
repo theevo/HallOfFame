@@ -48,6 +48,36 @@ class PersonListTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = PersonController.shared.people[indexPath.row]
+        
+        PersonController.shared.getPerson(person: person) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    
+                case .success(let person):
+                    //IIDOO
+                    
+                    // Destination
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let destinationVC = storyboard.instantiateViewController(identifier: "personDetailViewController") as? PersonDetailViewController else { return }
+                    
+                    
+                    // Object - Sent
+                    destinationVC.person = person
+                    
+                    // Present to user
+                    self.navigationController?.pushViewController(destinationVC, animated: true)
+                    
+                case .failure(let error):
+                    self.presentErrorToUser(localizedError: error)
+                }
+            }
+        }    }
+    
+    
     // MARK: - Helper Methods
     
     func fetchPeople() {
@@ -87,14 +117,5 @@ class PersonListTableViewController: UITableViewController {
      */
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

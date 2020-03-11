@@ -77,13 +77,14 @@ class PersonController {
         }.resume()
     }
     
-    func getPerson( id: Int, completion: @escaping (Result<Person,PersonError>) -> Void ) {
+    func getPerson( person: Person, completion: @escaping (Result<Person,PersonError>) -> Void ) {
         
         // 1) URL
         guard let url = baseURL else { return completion(.failure(.invalidURL)) }
         
         // 1.1) components
-        let personURL = url.appendingPathComponent(peopleEndpoint).appendingPathComponent(String(id))
+        let idString = person.id != nil ? "\(person.id!)" : ""
+        let personURL = url.appendingPathComponent(personEndpoint).appendingPathComponent(idString)
         
         let urlComponents = URLComponents(url: personURL, resolvingAgainstBaseURL: true)
         

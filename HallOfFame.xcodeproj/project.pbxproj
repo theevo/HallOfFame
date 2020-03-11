@@ -17,6 +17,7 @@
 		AC50FAAD24194D8800CEAF7F /* PersonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50FAAC24194D8800CEAF7F /* PersonError.swift */; };
 		AC99423D2419592900BC23DD /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99423C2419592900BC23DD /* PersonListTableViewController.swift */; };
 		AC9942402419658000BC23DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99423F2419658000BC23DD /* UIViewControllerExtension.swift */; };
+		AC994242241988D100BC23DD /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC994241241988D100BC23DD /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AC50FAAC24194D8800CEAF7F /* PersonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonError.swift; sourceTree = "<group>"; };
 		AC99423C2419592900BC23DD /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		AC99423F2419658000BC23DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		AC994241241988D100BC23DD /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AC99423C2419592900BC23DD /* PersonListTableViewController.swift */,
+				AC994241241988D100BC23DD /* PersonDetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC994242241988D100BC23DD /* PersonDetailViewController.swift in Sources */,
 				AC50FAAD24194D8800CEAF7F /* PersonError.swift in Sources */,
 				AC50FAAB24194C5D00CEAF7F /* PersonController.swift in Sources */,
 				AC99423D2419592900BC23DD /* PersonListTableViewController.swift in Sources */,

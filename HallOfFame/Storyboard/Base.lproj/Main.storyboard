@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="555.07246376811599" y="-11.383928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Detail View Controller-->
         <scene sceneID="4Yd-Bd-u91">
             <objects>
-                <viewController storyboardIdentifier="PersonDetailViewController" id="xjA-PE-baC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personDetailViewController" id="xjA-PE-baC" customClass="PersonDetailViewController" customModule="HallOfFame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqC-9o-WvU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="278.5" width="414" height="498.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="likeCell" id="D0C-0n-6sv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="interestCell" id="D0C-0n-6sv">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0C-0n-6sv" id="V4r-ef-z6b">
@@ -147,6 +147,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asn-ij-R7y"/>
                     </view>
+                    <connections>
+                        <outlet property="cohortLabel" destination="xbQ-o9-6fj" id="iVM-zR-jAO"/>
+                        <outlet property="interestsTableView" destination="iWQ-SP-BOS" id="GnZ-YA-0cf"/>
+                        <outlet property="personNameLabel" destination="Xk8-us-utA" id="kCC-JC-i7w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1R-Hj-wCO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
