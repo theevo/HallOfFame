@@ -42,6 +42,97 @@ class PersonDetailViewController: UIViewController {
         
     }
     
+    // MARK: - Actions
+    
+    // Add Interest
+    
+    @IBAction func newInterestTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Interest", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Basketball"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        let saveAsLikeAction = UIAlertAction(title: "Save as Like", style: .default) { (_) in
+            guard let interest = alert.textFields?.first?.text,
+                !interest.isEmpty,
+                let person = self.person
+                else { return }
+            
+            PersonController.shared.postLike( interestText: interest, person: person ) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                        
+                    case .success(_):
+                        self.person?.likes?.append(Like(text: interest))
+                        self.interestsTableView.reloadData()
+                        
+                    case .failure(let error):
+                        self.presentErrorToUser(localizedError: error)
+                    } // end switch
+                } // end dispatchqueue
+            } // end postLike
+        } // end saveAsLikeAction
+        
+        alert.addAction(saveAsLikeAction)
+        
+        let saveAsDisikeAction = UIAlertAction(title: "Save as Dislike", style: .default) { (_) in
+            guard let interest = alert.textFields?.first?.text,
+                !interest.isEmpty,
+                let person = self.person
+                else { return }
+            
+            PersonController.shared.postDislike( interestText: interest, person: person ) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                        
+                    case .success(_):
+                        self.person?.dislikes?.append(Dislike(text: interest))
+                        self.interestsTableView.reloadData()
+                        
+                    case .failure(let error):
+                        self.presentErrorToUser(localizedError: error)
+                    } // end switch
+                } // end dispatchqueue
+            } // end postLike
+        } // end saveAsDisikeAction
+        
+        alert.addAction(saveAsDisikeAction)
+        
+        present(alert, animated: true)
+    } // end newInterestTapped
+    
+    // Delete Person
+    @IBAction func deletePersonButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Are you sure?", message: "This action cannot be undone.", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Confirm", style: .destructive) { (_) in
+            guard let person = self.person else { return }
+            PersonController.shared.delete(person: person) { (result) in
+                DispatchQueue.main.async {
+                    
+                    switch result{
+                    case .success(_):
+                        self.navigationController?.popViewController(animated: true)
+                    case .failure(let error):
+                        self.presentErrorToUser(localizedError: error)
+                    }
+                }
+            }
+        }
+        alert.addAction(deleteAction)
+        present(alert, animated: true)
+    }
+    
+    
+    
+    
 } // end class
 
 extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {

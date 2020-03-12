@@ -65,7 +65,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zv3-ev-eGS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bsH-HL-SPv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bsH-HL-SPv">
+                            <connections>
+                                <action selector="createPersonButtonTapped:" destination="vwA-OH-6wU" id="sP6-t5-Zw5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b5-3g-oWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,6 +108,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="275" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-is-hAt">
                                         <rect key="frame" x="343" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="New"/>
+                                        <connections>
+                                            <action selector="newInterestTapped:" destination="xjA-PE-baC" eventType="touchUpInside" id="p10-EK-zrO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -126,6 +133,9 @@
                                 <state key="normal" title="Delete Person">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deletePersonButtonTapped:" destination="xjA-PE-baC" eventType="touchUpInside" id="pwv-un-uB1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

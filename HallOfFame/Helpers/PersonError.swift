@@ -13,6 +13,7 @@ enum PersonError: LocalizedError {
     case invalidURL
     case noData
     case badData
+    case failToDelete
     
     var errorDescription: String? {
         switch self {
@@ -25,6 +26,8 @@ enum PersonError: LocalizedError {
             return "Server responded with no data."
         case .badData:
             return "Server returned bad data."
+        case .failToDelete:
+            return "Delete failed."
         }
     } // end errorDescription
 } // end enum

@@ -17,6 +17,11 @@ class PersonListTableViewController: UITableViewController {
     
     // MARK: - Lifecycle Methods
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,6 +107,52 @@ class PersonListTableViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func createPersonButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "First name"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Last name"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Cohort"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            guard let firstName = alert.textFields?.first?.text,
+                !firstName.isEmpty,
+                let lastName = alert.textFields?[1].text,
+                !lastName.isEmpty,
+                let cohort = alert.textFields?.last?.text,
+                !cohort.isEmpty else { return }
+            
+            PersonController.shared.postPerson(firstName: firstName, lastName: lastName, cohort: cohort) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(_):
+                        self.tableView.reloadData()
+                    case .failure(let error):
+                        self.presentErrorToUser(localizedError: error)
+                    }
+                }
+            }
+        }
+        
+        alert.addAction(saveAction)
+        
+        present(alert, animated: true)
+    }
+    
     
     
     /*

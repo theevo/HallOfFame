@@ -13,8 +13,8 @@ struct Person: Codable {
     let lastName: String
     let cohort: String
     let id: Int?
-    let likes: [Like]?
-    let dislikes: [Dislike]?
+    var likes: [Like]?
+    var dislikes: [Dislike]?
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"

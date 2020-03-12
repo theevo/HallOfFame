@@ -15,6 +15,7 @@
 		AC50FAA62419475300CEAF7F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50FAA52419475300CEAF7F /* Person.swift */; };
 		AC50FAAB24194C5D00CEAF7F /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50FAAA24194C5D00CEAF7F /* PersonController.swift */; };
 		AC50FAAD24194D8800CEAF7F /* PersonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50FAAC24194D8800CEAF7F /* PersonError.swift */; };
+		AC73A7AE241A9EDA00CBFCDB /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73A7AD241A9EDA00CBFCDB /* Interest.swift */; };
 		AC99423D2419592900BC23DD /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99423C2419592900BC23DD /* PersonListTableViewController.swift */; };
 		AC9942402419658000BC23DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99423F2419658000BC23DD /* UIViewControllerExtension.swift */; };
 		AC994242241988D100BC23DD /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC994241241988D100BC23DD /* PersonDetailViewController.swift */; };
@@ -31,6 +32,7 @@
 		AC50FAA52419475300CEAF7F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AC50FAAA24194C5D00CEAF7F /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		AC50FAAC24194D8800CEAF7F /* PersonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonError.swift; sourceTree = "<group>"; };
+		AC73A7AD241A9EDA00CBFCDB /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		AC99423C2419592900BC23DD /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		AC99423F2419658000BC23DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AC994241241988D100BC23DD /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AC50FAA824194C4600CEAF7F /* Controllers */,
-				AC50FAA42419473B00CEAF7F /* Model */,
+				AC50FAA42419473B00CEAF7F /* Models */,
 				AC50FAA724194AFC00CEAF7F /* Storyboard */,
 				AC50FAAE24194D9400CEAF7F /* Helpers */,
 				AC50FAA32419429E00CEAF7F /* Resources */,
@@ -87,12 +89,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AC50FAA42419473B00CEAF7F /* Model */ = {
+		AC50FAA42419473B00CEAF7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				AC50FAA52419475300CEAF7F /* Person.swift */,
+				AC73A7AD241A9EDA00CBFCDB /* Interest.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AC50FAA724194AFC00CEAF7F /* Storyboard */ = {
@@ -212,6 +215,7 @@
 				AC994242241988D100BC23DD /* PersonDetailViewController.swift in Sources */,
 				AC50FAAD24194D8800CEAF7F /* PersonError.swift in Sources */,
 				AC50FAAB24194C5D00CEAF7F /* PersonController.swift in Sources */,
+				AC73A7AE241A9EDA00CBFCDB /* Interest.swift in Sources */,
 				AC99423D2419592900BC23DD /* PersonListTableViewController.swift in Sources */,
 				AC50FAA62419475300CEAF7F /* Person.swift in Sources */,
 				AC50FA902419428D00CEAF7F /* AppDelegate.swift in Sources */,
